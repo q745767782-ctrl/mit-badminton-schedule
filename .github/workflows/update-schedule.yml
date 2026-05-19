@@ -1,0 +1,30 @@
+name: Update badminton schedule
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - run: npm install
+      - run: npx playwright install --with-deps chromium
+      - run: npm run update
+        env:
+          MAZEVO_CALENDAR_CODE: ${{ secrets.MAZEVO_CALENDAR_CODE }}
+          MAZEVO_API_KEY: ${{ secrets.MAZEVO_API_KEY }}
+      - name: Commit updated schedule
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Update badminton schedule
+          file_pattern: schedule.json

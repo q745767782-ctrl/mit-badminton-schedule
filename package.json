@@ -1,0 +1,14 @@
+{
+  "name": "mit-badminton-schedule",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "update": "node scripts/update-schedule.mjs",
+    "serve": "python3 -m http.server 8000"
+  },
+  "dependencies": {
+    "pdfjs-dist": "^5.4.296",
+    "playwright": "^1.56.1"
+  }
+}

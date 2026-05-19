@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MIT Open Rec Badminton Schedule</title>
+    <meta
+      name="description"
+      content="Unofficial MIT open recreation badminton schedule, rebuilt as a static and easy-to-maintain page."
+    >
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="topbar" aria-label="Page">
+        <a class="brand" href="#schedule" aria-label="MIT Open Rec Badminton">
+          <span class="brand-mark" aria-hidden="true">B</span>
+          <span>MIT Badminton</span>
+        </a>
+        <div class="nav-actions">
+          <a href="#guide">Court guide</a>
+          <a href="#maintain">Update data</a>
+        </div>
+      </nav>
+
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Unofficial open recreation schedule</p>
+          <h1 id="page-title">MIT Open Rec Badminton</h1>
+          <p class="lede">
+            A cleaner rebuild of the original shen.nz badminton page, backed by
+            Mazevo when the public calendar API is available. Always confirm
+            unusual changes with MIT Recreation before going to the courts.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#schedule">View schedule</a>
+            <a
+              class="button secondary"
+              href="https://www.mitrecsports.com/work-out/open-recreation/"
+              rel="noreferrer"
+              target="_blank"
+            >MIT Rec</a>
+          </div>
+        </div>
+        <aside class="status-panel" aria-label="Schedule status">
+          <div>
+            <span class="status-label">Data status</span>
+            <strong id="freshnessLabel">Checking...</strong>
+          </div>
+          <dl class="status-grid">
+            <div>
+              <dt>Last update</dt>
+              <dd id="lastUpdated">-</dd>
+            </div>
+            <div>
+              <dt>Sessions</dt>
+              <dd id="sessionCount">-</dd>
+            </div>
+            <div>
+              <dt>Dedicated</dt>
+              <dd id="dedicatedCount">-</dd>
+            </div>
+            <div>
+              <dt>Shared</dt>
+              <dd id="sharedCount">-</dd>
+            </div>
+          </dl>
+        </aside>
+      </section>
+    </header>
+
+    <main>
+      <section class="notice" id="facilitiesNotice" aria-labelledby="notice-title">
+        <div>
+          <p class="eyebrow">Facilities reminder</p>
+          <h2 id="notice-title">Leave the courts ready for the next group</h2>
+          <p>
+            Pick up shuttlecocks, take down and store nets properly, and leave
+            the gym as you found it. Open rec offerings may shrink if cleanup
+            remains a problem.
+          </p>
+        </div>
+        <button class="icon-button" id="dismissNotice" type="button" aria-label="Hide notice for two weeks">
+          <span aria-hidden="true">x</span>
+        </button>
+      </section>
+
+      <section class="section-intro" id="schedule" aria-labelledby="schedule-title">
+        <div>
+          <p class="eyebrow">Schedule</p>
+          <h2 id="schedule-title">Open rec sessions</h2>
+        </div>
+        <p>
+          <span class="badge shared">S</span> Shared with other sports
+          <span class="badge dedicated">D</span> Dedicated badminton court
+        </p>
+      </section>
+
+      <section class="toolbar" aria-label="Schedule filters">
+        <div class="filter-group" role="group" aria-label="Court type">
+          <button class="filter active" data-filter="all" type="button">All</button>
+          <button class="filter" data-filter="dedicated" type="button">Dedicated</button>
+          <button class="filter" data-filter="shared" type="button">Shared</button>
+          <button class="filter" data-filter="today" type="button">Today</button>
+        </div>
+        <label class="select-label">
+          <span>Venue</span>
+          <select id="venueFilter">
+            <option value="all">All venues</option>
+          </select>
+        </label>
+      </section>
+
+      <section class="schedule-list" id="scheduleList" aria-live="polite"></section>
+
+      <section class="empty-state" id="emptyState" hidden>
+        <h2>No live sessions available</h2>
+        <p>The updater has not produced current Mazevo data yet.</p>
+      </section>
+
+      <section class="guide-grid" id="guide" aria-label="Court guide">
+        <article>
+          <h2>Rockwell</h2>
+          <p>Usually less slippery than du Pont and often preferred for longer sessions.</p>
+        </article>
+        <article>
+          <h2>du Pont</h2>
+          <p>Check whether the court is shared before planning around guaranteed badminton space.</p>
+        </article>
+        <article id="maintain">
+          <h2>Maintain this page</h2>
+          <p>
+            Run <code>npm run update</code> to rebuild <code>schedule.json</code>
+            from MIT Recreation's published schedule PDF.
+          </p>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        Rebuilt from the original
+        <a href="https://shen.nz/badminton/" rel="noreferrer" target="_blank">shen.nz badminton page</a>.
+        This is unofficial and may be inaccurate.
+      </p>
+      <p id="generatedAt"></p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
