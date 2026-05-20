@@ -3,28 +3,28 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>MIT Open Rec Badminton Schedule</title>
+    <title>BU Open Rec Badminton Schedule</title>
     <meta
       name="description"
-      content="Unofficial MIT open recreation badminton schedule, rebuilt as a static and easy-to-maintain page."
+      content="Unofficial Boston University FitRec open recreation badminton schedule."
     >
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <header class="site-header">
       <nav class="topbar" aria-label="Page">
-        <a class="brand" href="#schedule" aria-label="MIT Open Rec Badminton">
+        <a class="brand" href="#schedule" aria-label="BU Open Rec Badminton">
           <span class="brand-mark" aria-hidden="true">B</span>
-          <span>MIT Badminton</span>
+          <span>BU Badminton</span>
         </a>
         <div class="nav-actions">
-          <a href="bu.html">BU schedule</a>
+          <a href="index.html">MIT schedule</a>
           <a href="#guide">Court guide</a>
           <a href="#maintain">Update data</a>
         </div>
         <a
           class="visit-counter"
-          href="https://hits.sh/tim2500-ctrl.github.io/mit-badminton-schedule/"
+          href="https://hits.sh/tim2500-ctrl.github.io/mit-badminton-schedule/bu.html/"
           rel="noreferrer"
           target="_blank"
           aria-label="Visitor counter"
@@ -39,7 +39,7 @@
             <ellipse class="shuttle-cork" cx="24.6" cy="24.6" rx="4.8" ry="3.3" transform="rotate(45 24.6 24.6)" />
           </svg>
           <img
-            src="https://hits.sh/tim2500-ctrl.github.io/mit-badminton-schedule.svg?label=visits&color=ffffff&labelColor=17202a"
+            src="https://hits.sh/tim2500-ctrl.github.io/mit-badminton-schedule/bu.html.svg?label=visits&color=ffffff&labelColor=17202a"
             alt="Visitor count"
           >
         </a>
@@ -47,8 +47,8 @@
 
       <section class="hero" aria-labelledby="page-title">
         <div class="hero-copy">
-          <p class="eyebrow">Unofficial open recreation schedule</p>
-          <h1 id="page-title">MIT Open Rec Badminton</h1>
+          <p class="eyebrow">Unofficial FitRec open recreation schedule</p>
+          <h1 id="page-title">BU Open Rec Badminton</h1>
           <div class="feedback-card" aria-label="Feedback on Xiaohongshu">
             <a
               class="feedback-link"
@@ -64,10 +64,10 @@
             <a class="button primary" href="#schedule">View schedule</a>
             <a
               class="button secondary"
-              href="https://www.mitrecsports.com/work-out/open-recreation/"
+              href="https://www.bu.edu/fitrec/visit-us/hours/"
               rel="noreferrer"
               target="_blank"
-            >MIT Rec</a>
+            >BU FitRec</a>
           </div>
         </div>
         <aside class="status-panel" aria-label="Schedule status">
@@ -119,7 +119,6 @@
           <h2 id="schedule-title">Open rec sessions</h2>
         </div>
         <p>
-          <span class="badge shared">S</span> Shared with other sports
           <span class="badge dedicated">D</span> Dedicated badminton court
         </p>
       </section>
@@ -128,7 +127,6 @@
         <div class="filter-group" role="group" aria-label="Court type">
           <button class="filter active" data-filter="all" type="button">All</button>
           <button class="filter" data-filter="dedicated" type="button">Dedicated</button>
-          <button class="filter" data-filter="shared" type="button">Shared</button>
           <button class="filter" data-filter="today" type="button">Today</button>
         </div>
         <label class="select-label">
@@ -143,23 +141,23 @@
 
       <section class="empty-state" id="emptyState" hidden>
         <h2>No live sessions available</h2>
-        <p>The updater has not produced current Mazevo data yet.</p>
+        <p>The updater has not produced current BU FitRec data yet.</p>
       </section>
 
       <section class="guide-grid" id="guide" aria-label="Court guide">
         <article>
-          <h2>Rockwell</h2>
-          <p>Usually less slippery than du Pont and often preferred for longer sessions.</p>
+          <h2>FitRec 3-Court Gym</h2>
+          <p>BU lists open rec badminton under 3-Court Gym Hours.</p>
         </article>
         <article>
-          <h2>du Pont</h2>
-          <p>Check whether the court is shared before planning around guaranteed badminton space.</p>
+          <h2>Weekend Mornings</h2>
+          <p>Current summer hours show open rec badminton on Saturday and Sunday mornings.</p>
         </article>
         <article id="maintain">
           <h2>Maintain this page</h2>
           <p>
-            Run <code>npm run update</code> to rebuild <code>schedule.json</code>
-            from MIT Recreation's Mazevo calendar.
+            Run <code>npm run update:bu</code> to rebuild
+            <code>bu-schedule.json</code> from BU FitRec Hours.
           </p>
         </article>
       </section>
@@ -167,13 +165,20 @@
 
     <footer class="site-footer">
       <p>
-        Rebuilt from the original
-        <a href="https://shen.nz/badminton/" rel="noreferrer" target="_blank">shen.nz badminton page</a>.
+        Source:
+        <a href="https://www.bu.edu/fitrec/visit-us/hours/" rel="noreferrer" target="_blank">BU FitRec Hours</a>.
         This is unofficial and may be inaccurate.
       </p>
       <p id="generatedAt"></p>
     </footer>
 
+    <script>
+      window.scheduleConfig = {
+        scheduleUrl: "bu-schedule.json",
+        fallbackScheduleData: [],
+        mapQuery: "Boston University FitRec 3-Court Gym"
+      };
+    </script>
     <script src="app.js"></script>
   </body>
 </html>

@@ -18,12 +18,12 @@ jobs:
           node-version: "22"
       - run: npm install
       - run: npx playwright install --with-deps chromium
-      - run: npm run update
+      - run: npm run update:all
         env:
           MAZEVO_CALENDAR_CODE: ${{ secrets.MAZEVO_CALENDAR_CODE }}
           MAZEVO_API_KEY: ${{ secrets.MAZEVO_API_KEY }}
       - name: Commit updated schedule
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: Update badminton schedule
-          file_pattern: schedule.json
+          commit_message: Update badminton schedules
+          file_pattern: schedule.json bu-schedule.json

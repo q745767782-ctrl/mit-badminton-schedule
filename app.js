@@ -5,6 +5,7 @@ let scheduleMeta = {
 };
 
 let scheduleData = [];
+const appConfig = window.scheduleConfig || {};
 
 const fallbackScheduleData = [
   {
@@ -110,7 +111,8 @@ function getCourtKindLabel(type) {
 }
 
 function getMapUrl(court) {
-  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`MIT ${court}`)}`;
+  const query = appConfig.mapQuery || `MIT ${court}`;
+  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
 }
 
 function getTodayKey() {
@@ -254,7 +256,9 @@ function setupNotice() {
 
 async function loadSchedule() {
   try {
-    const response = await fetch(`schedule.json?updated=${Date.now()}`, { cache: "no-store" });
+    const scheduleUrl = appConfig.scheduleUrl || "schedule.json";
+    const separator = scheduleUrl.includes("?") ? "&" : "?";
+    const response = await fetch(`${scheduleUrl}${separator}updated=${Date.now()}`, { cache: "no-store" });
 
     if (!response.ok) {
       throw new Error(`Schedule request failed: ${response.status}`);
@@ -275,7 +279,7 @@ async function loadSchedule() {
       generatedAt: "2026-04-13T07:10:05-04:00",
       live: false,
     };
-    scheduleData = fallbackScheduleData;
+    scheduleData = appConfig.fallbackScheduleData || fallbackScheduleData;
   }
 }
 
