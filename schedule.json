@@ -1,24 +1,7 @@
 {
   "source": "https://east.mymazevo.com/calendar?code=RXphMEplcUJrNXhtelI0WitsVXJMK1Q5YmpWaTlJQkprZmYwVVhsOW94cm92aDJGcWNFYklMUzNtZ1h5Qmg2UnMwS2tCU0dBa1ZlMEZ0azNmbHptdUdYbGgvZW90MXExVWR2dXVJN1ovK3BoQm9uR0pndkpuMmU1bnp1bm5CcmM",
-  "generatedAt": "2026-05-20T02:51:56.663Z",
+  "generatedAt": "2026-05-20T12:13:34.179Z",
   "schedule": [
-    {
-      "date": "2026-05-19",
-      "sessions": [
-        {
-          "time": "6:00 AM - 6:00 PM",
-          "court": "du Pont Court 1",
-          "type": "dedicated",
-          "sourceText": "6:00 AM- 6:00 PM du Pont (W31/32) - Du Pont Court 1 Open Rec - Badminton"
-        },
-        {
-          "time": "9:00 PM - 11:00 PM",
-          "court": "du Pont Court 1",
-          "type": "shared",
-          "sourceText": "9:00 PM- 11:00 PM du Pont (W31/32) - Du Pont Court 1 Open Rec"
-        }
-      ]
-    },
     {
       "date": "2026-05-20",
       "sessions": [
@@ -47,15 +30,15 @@
         },
         {
           "time": "9:00 PM - 11:00 PM",
-          "court": "du Pont Court 2",
-          "type": "shared",
-          "sourceText": "9:00 PM- 11:00 PM du Pont (W31/32) - Du Pont Court 2 Open Rec"
-        },
-        {
-          "time": "9:00 PM - 11:00 PM",
           "court": "du Pont Court 1",
           "type": "shared",
           "sourceText": "9:00 PM- 11:00 PM du Pont (W31/32) - Du Pont Court 1 Open Rec"
+        },
+        {
+          "time": "9:00 PM - 11:00 PM",
+          "court": "du Pont Court 2",
+          "type": "shared",
+          "sourceText": "9:00 PM- 11:00 PM du Pont (W31/32) - Du Pont Court 2 Open Rec"
         }
       ]
     },
@@ -118,6 +101,17 @@
           "court": "du Pont Court 1",
           "type": "shared",
           "sourceText": "9:00 PM- 11:00 PM du Pont (W31/32) - Du Pont Court 1 Open Rec"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-27",
+      "sessions": [
+        {
+          "time": "9:30 PM - 11:00 PM",
+          "court": "du Pont Court 2",
+          "type": "dedicated",
+          "sourceText": "9:30 PM- 11:00 PM du Pont (W31/32) - Du Pont Court 2 Open Rec - Badminton"
         }
       ]
     }
