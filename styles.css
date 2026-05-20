@@ -72,6 +72,7 @@ main,
 
 .brand,
 .nav-actions,
+.school-switch,
 .visit-counter {
   display: flex;
   align-items: center;
@@ -96,6 +97,18 @@ main,
   font-size: 0.95rem;
   text-decoration: none;
   opacity: 0.88;
+}
+
+.school-switch {
+  min-height: 34px;
+  padding: 0 10px;
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.12);
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-decoration: none;
+  white-space: nowrap;
 }
 
 .visit-counter {
@@ -525,8 +538,12 @@ code {
     display: none;
   }
 
-  .visit-counter {
+  .school-switch {
     margin-left: auto;
+  }
+
+  .visit-counter {
+    margin-left: 0;
   }
 
   .hero,
@@ -592,10 +609,13 @@ code {
     padding: 10px 0;
   }
 
+  .school-switch {
+    order: 3;
+  }
+
   .visit-counter {
     min-height: 38px;
     padding: 5px 7px;
-    margin-left: 0;
   }
 
   .visit-counter svg {

@@ -105,6 +105,8 @@ const venueFilter = document.querySelector("#venueFilter");
 const filters = document.querySelectorAll(".filter");
 const notice = document.querySelector("#facilitiesNotice");
 const dismissNotice = document.querySelector("#dismissNotice");
+const noticeDismissedUntilKey = "badmintonNoticeDismissedUntil";
+const oneWeekMs = 7 * 24 * 60 * 60 * 1000;
 
 function getCourtKindLabel(type) {
   return type === "dedicated" ? "Dedicated badminton court" : "Shared with other sports";
@@ -249,7 +251,30 @@ function setupFilters() {
 }
 
 function setupNotice() {
+  if (!notice || !dismissNotice) {
+    return;
+  }
+
+  try {
+    const dismissedUntil = Number(localStorage.getItem(noticeDismissedUntilKey));
+
+    if (dismissedUntil > Date.now()) {
+      notice.hidden = true;
+      return;
+    }
+
+    localStorage.removeItem(noticeDismissedUntilKey);
+  } catch (error) {
+    console.warn(error);
+  }
+
   dismissNotice.addEventListener("click", () => {
+    try {
+      localStorage.setItem(noticeDismissedUntilKey, String(Date.now() + oneWeekMs));
+    } catch (error) {
+      console.warn(error);
+    }
+
     notice.hidden = true;
   });
 }
