@@ -254,7 +254,7 @@ function setupNotice() {
 
 async function loadSchedule() {
   try {
-    const response = await fetch("schedule.json", { cache: "no-store" });
+    const response = await fetch(`schedule.json?updated=${Date.now()}`, { cache: "no-store" });
 
     if (!response.ok) {
       throw new Error(`Schedule request failed: ${response.status}`);
