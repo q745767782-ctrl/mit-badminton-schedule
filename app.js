@@ -247,15 +247,7 @@ function setupFilters() {
 }
 
 function setupNotice() {
-  const dismissedUntil = Number(localStorage.getItem("badmintonNoticeDismissedUntil") || 0);
-
-  if (dismissedUntil > Date.now()) {
-    notice.hidden = true;
-  }
-
   dismissNotice.addEventListener("click", () => {
-    const twoWeeks = 14 * 24 * 60 * 60 * 1000;
-    localStorage.setItem("badmintonNoticeDismissedUntil", String(Date.now() + twoWeeks));
     notice.hidden = true;
   });
 }
