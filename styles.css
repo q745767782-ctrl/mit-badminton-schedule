@@ -560,12 +560,15 @@ code {
   }
 
   .topbar {
+    flex-wrap: wrap;
     min-height: 62px;
+    padding: 10px 0;
   }
 
   .visit-counter {
     min-height: 38px;
     padding: 5px 7px;
+    margin-left: 0;
   }
 
   .visit-counter svg {
@@ -574,8 +577,8 @@ code {
   }
 
   .visit-counter img {
-    height: 22px;
-    max-width: 104px;
+    height: 23px;
+    max-width: 112px;
   }
 
   .brand {
@@ -740,10 +743,6 @@ code {
 }
 
 @media (max-width: 360px) {
-  .visit-counter img {
-    display: none;
-  }
-
   .hero-actions,
   .filter-group,
   .status-grid {
