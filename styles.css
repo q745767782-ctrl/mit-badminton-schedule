@@ -175,7 +175,7 @@ h2 {
 
 .feedback-card {
   display: grid;
-  grid-template-columns: 116px minmax(0, 1fr);
+  grid-template-columns: 180px minmax(0, 1fr);
   gap: 16px;
   align-items: center;
   max-width: 660px;
@@ -186,13 +186,19 @@ h2 {
   background: rgba(23, 32, 42, 0.28);
 }
 
-.feedback-card img {
-  display: block;
-  width: 116px;
-  aspect-ratio: 1;
-  border-radius: 6px;
-  object-fit: cover;
-  object-position: top;
+.feedback-link {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--red);
+  font-weight: 800;
+  text-align: center;
+  text-decoration: none;
 }
 
 .feedback-card p {
@@ -626,13 +632,13 @@ code {
   }
 
   .feedback-card {
-    grid-template-columns: 96px minmax(0, 1fr);
+    grid-template-columns: 1fr;
     gap: 12px;
     padding: 12px;
   }
 
-  .feedback-card img {
-    width: 96px;
+  .feedback-link {
+    width: 100%;
   }
 
   .feedback-card p {
