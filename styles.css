@@ -99,31 +99,39 @@ main,
 }
 
 .visit-counter {
-  min-height: 32px;
-  padding: 4px 8px;
+  min-height: 42px;
+  padding: 6px 10px;
   border: 1px solid rgba(255, 255, 255, 0.38);
   border-radius: 8px;
   background: rgba(23, 32, 42, 0.28);
-  gap: 7px;
+  gap: 9px;
   text-decoration: none;
 }
 
 .visit-counter svg {
   display: block;
-  width: 20px;
-  height: 20px;
+  width: 28px;
+  height: 28px;
   flex: 0 0 auto;
   fill: none;
   stroke: currentColor;
   stroke-linecap: round;
   stroke-linejoin: round;
-  stroke-width: 1.9;
+  stroke-width: 1.7;
+}
+
+.visit-counter .shuttle-skirt {
+  fill: rgba(255, 255, 255, 0.12);
+}
+
+.visit-counter .shuttle-cork {
+  fill: currentColor;
 }
 
 .visit-counter img {
   display: block;
-  height: 20px;
-  max-width: 112px;
+  height: 24px;
+  max-width: 132px;
 }
 
 .hero {
@@ -556,11 +564,18 @@ code {
   }
 
   .visit-counter {
-    padding: 4px 6px;
+    min-height: 38px;
+    padding: 5px 7px;
+  }
+
+  .visit-counter svg {
+    width: 26px;
+    height: 26px;
   }
 
   .visit-counter img {
-    max-width: 88px;
+    height: 22px;
+    max-width: 104px;
   }
 
   .brand {
