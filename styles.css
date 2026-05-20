@@ -173,11 +173,33 @@ h2 {
   line-height: 1.1;
 }
 
-.lede {
-  max-width: 640px;
+.feedback-card {
+  display: grid;
+  grid-template-columns: 116px minmax(0, 1fr);
+  gap: 16px;
+  align-items: center;
+  max-width: 660px;
   margin-bottom: 28px;
-  color: rgba(255, 255, 255, 0.88);
-  font-size: 1.12rem;
+  padding: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 8px;
+  background: rgba(23, 32, 42, 0.28);
+}
+
+.feedback-card img {
+  display: block;
+  width: 116px;
+  aspect-ratio: 1;
+  border-radius: 6px;
+  object-fit: cover;
+  object-position: top;
+}
+
+.feedback-card p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.94);
+  font-size: 1.02rem;
+  line-height: 1.65;
 }
 
 .hero-actions,
@@ -518,9 +540,8 @@ code {
     line-height: 0.98;
   }
 
-  .lede {
+  .feedback-card {
     margin-bottom: 22px;
-    font-size: 1.02rem;
   }
 
   .hero-actions {
@@ -604,9 +625,19 @@ code {
     font-size: 1.35rem;
   }
 
-  .lede {
-    max-width: 34rem;
-    font-size: 0.98rem;
+  .feedback-card {
+    grid-template-columns: 96px minmax(0, 1fr);
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .feedback-card img {
+    width: 96px;
+  }
+
+  .feedback-card p {
+    font-size: 0.95rem;
+    line-height: 1.55;
   }
 
   .hero-actions {
