@@ -1,18 +1,7 @@
 {
   "source": "https://east.mymazevo.com/calendar?code=RXphMEplcUJrNXhtelI0WitsVXJMK1Q5YmpWaTlJQkprZmYwVVhsOW94cm92aDJGcWNFYklMUzNtZ1h5Qmg2UnMwS2tCU0dBa1ZlMEZ0azNmbHptdUdYbGgvZW90MXExVWR2dXVJN1ovK3BoQm9uR0pndkpuMmU1bnp1bm5CcmM",
-  "generatedAt": "2026-05-23T22:38:59.503Z",
+  "generatedAt": "2026-05-24T08:06:21.828Z",
   "schedule": [
-    {
-      "date": "2026-05-23",
-      "sessions": [
-        {
-          "time": "12:00 PM - 6:00 PM",
-          "court": "du Pont Court 1",
-          "type": "dedicated",
-          "sourceText": "12:00 PM- 6:00 PM du Pont (W31/32) - Du Pont Court 1 Open Rec - Badminton"
-        }
-      ]
-    },
     {
       "date": "2026-05-24",
       "sessions": [
@@ -94,6 +83,23 @@
           "court": "du Pont Court 1",
           "type": "dedicated",
           "sourceText": "12:00 PM- 9:00 PM du Pont (W31/32) - Du Pont Court 1 Open Rec - Badminton"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-31",
+      "sessions": [
+        {
+          "time": "12:00 PM - 3:00 PM",
+          "court": "du Pont Court 1",
+          "type": "dedicated",
+          "sourceText": "12:00 PM- 3:00 PM du Pont (W31/32) - Du Pont Court 1 Open Rec - Badminton"
+        },
+        {
+          "time": "6:30 PM - 11:00 PM",
+          "court": "du Pont Court 1",
+          "type": "dedicated",
+          "sourceText": "6:30 PM- 11:00 PM du Pont (W31/32) - Du Pont Court 1 Open Rec - Badminton"
         }
       ]
     }
